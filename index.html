@@ -1,0 +1,293 @@
+<html>
+
+<head>
+	<title>FLAMES</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+	<style>
+    @font-face {
+  font-family: 'Permanent Marker';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/permanentmarker/v16/Fh4uPib9Iyv2ucM6pGQMWimMp004La2Cfw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+body{
+  background-color: #131414;
+  background-image: url("https://cdn.pixabay.com/photo/2017/05/30/08/31/heart-2356169_1280.png");
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+}
+/* .my{
+  margin-left: 1%;
+  width: 40vw;
+} */
+.top{
+  font-family: 'Permanent Marker', cursive;
+  font-size: 4rem;
+  margin-top: 8%;
+  margin-left: 8%;
+}
+.i{
+  margin-top: 6%;
+  width: 99.7vw;
+}
+.top-p{
+  color: #0e67f5;
+  text-align: center;
+margin-left: 8%;
+font-size: 1.5rem;
+font-weight: bold;
+}
+a{
+  color:#f76a8c;
+}
+h1{
+  color: #d40913;
+}
+.btn{
+  margin-top: 5%;
+  margin-left: 5%;
+  border: none;
+  background-color: #f76a8c;
+}
+.btn:hover{
+  background-color: #eb6383;
+}
+.def{
+  color: #d40726;
+  margin-left: 5%;
+  font-size: 1.5rem;
+  font-weight: bold;
+
+}
+input{
+  border-radius: 5px;
+  text-align: center;
+margin-left: 4%;
+  border: solid #f76a8c;
+  color: #f76a8c;
+  font-weight: bold;
+  font-size: 1.5rem;
+  height: 70px;
+}
+#nam1{
+  font-size: 1.5rem;
+
+  color: #c71b0f;
+  margin-left: 5%;
+}
+#display_flame{
+  margin-top: 2%;
+  margin-left: 8%;
+font-family: 'Permanent Marker', cursive;
+  font-size: 4rem;
+}
+ @media only screen and (max-width:768px) {
+   .top{
+     font-size: 2rem;
+   }
+   body{
+     background-size: 500px 800px;
+   }
+ }
+
+	</style>
+	<script type='text/javascript' src='flames.js'></script>
+
+</head>
+
+<body>
+	<h1 align="center" style="font-family: fantasy;">Relationship status</h1>
+<div class="row i">
+	<div class="col-md-6">
+		<img class="my "src="luv.svg" alt="">
+	</div>
+	<div class="col-md-6">
+		<div class="main">
+		<h1 class="top">Love Calculator </h1>
+		</div>
+			<form name=first>
+				<div class=" "id='maindiv'>
+					<div class='group'>
+		       <p class="def">Enter the names: </p>	
+							<input value='' name=name onkeyup=check(this) type=text class='txt' id='yname' placeholder="your name">
+							<input value='' name=name1 onkeyup=check(this) type=text class='txt' id='pname' placeholder="partner name"> 
+						<div name=n1 id=nam1 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"><b>Click the button to know the relationship status:</b></div>
+						<div id='display_flame'></div>
+
+
+					</div>
+
+
+					<div class='but_por'>
+						<button name=calculate type="button" onclick=calc() class="btn btn-secondary btn-lg">FLAMES</button>
+						<button type=reset onclick='clear_all()' class="btn btn-secondary btn-lg">Reset</button>
+						<span align='center' id="dumdiv">
+						</span>
+					</div>
+
+				</div>
+
+
+				<div id='result' class='clearfix'>
+					<div class='group' align='center'>
+						<div class='love_result'>
+							<span name=n1 id=nam1></span>
+							</div> </div> </div> </form>
+              <div class="yt">
+              <iframe align="center" height="345" width="500" src="" id="vid"></iframe>
+              </div>
+              <h5 align="right" style="color: #f5efee;">Designed by @jasprit_vj</h5>
+
+	</div>
+  <h3 style="color: aliceblue;font-family: fantasy;" >  NNote:</h3>
+<h4 style="color: aliceblue;font-family: fantasy;"><ul>1.The Gender must not be Same!!.</ul></h4>
+<h4 style="color: aliceblue;font-family: fantasy;"><ul>2.Must not include sibilings.</ul></h4>
+<h4 style="color: aliceblue;font-family: fantasy;"><ul>3.Age Should be relevant.</ul></h4>
+</div>
+
+<script>
+	
+function check(name)
+{
+	var new_name = name.value;
+
+            	if(!isNaN(new_name))
+            	{
+            		new_name = new_name.substring(0,(new_name.length-1));
+            		name.value = new_name;
+            	}
+}
+function calc()
+{
+	var fname = document.getElementById('yname').value;
+	var sname = document.getElementById('pname').value;
+	if (fname=='') {
+		alert("Enter First Name");
+	}
+	else if (sname=='') {
+		alert("Enter Second Name");
+	}
+    var r = /\s+/g;
+    var orfirst = document.first.name.value.toUpperCase();
+    var nam=orfirst;
+    orfirst = orfirst.replace(r,"");
+    if(orfirst!="")
+    {
+			var count = 0;
+            var first = orfirst;
+            second = eval("document.first.name"+1).value.toUpperCase();
+            var names=second;
+            second = second.replace(r,"");
+            if(second != "")
+            {
+                document.getElementById("result").style.display = 'block';
+                    for(var i=0; i<first.length; i++)
+                    {
+                            for(var j=0; j<second.length; j++)
+                            {
+                                    if(first[i] == second[j])
+                                    {
+                                            var a1 = first.substring(0,i);
+                                            var a2 = first.substring(i+1,first.length);
+                                            first = a1+a2;
+                                            i=-1;
+                                            var b1 = second.substring(0,j);
+                                            var b2 = second.substring(j+1,second.length);
+                                            second = b1+b2;
+                                            j=-1;
+                                            break;
+                                    }
+                            }
+                    }
+                    var ss=(first+second);
+                    var l=ss.length;
+                    var ar = new Array("F", "L", "A", "M", "E", "S");
+                    var stp=1;
+
+                    for(var x=6; x>1; x--)
+                    {
+                            var g=((l%x)+stp)-1;
+                            if(g>x)
+                            {
+                                    g=g%x;
+                            }
+                            if(g==0)
+                            {
+                                    g=ar.length;
+                            }
+                            ar.splice(g-1,1);
+                            stp=g;
+                    }
+
+                    if(ar=="F")
+                    {
+							document.getElementById("display_flame").innerHTML = 'FRIENDS';
+							document.getElementById("display_flame").style.color='blue';
+              let image=document.getElementById("vid");
+              image.src="https://www.youtube.com/embed/1Yg6R2KOkZg?autoplay=1&mute=1";
+             
+                    }
+                    else if(ar=="L")
+                    {
+							document.getElementById("display_flame").innerHTML = 'LOVER';
+							document.getElementById("display_flame").style.color='#FF0080';
+              let img1=document.getElementById("vid");
+              img1.src="https://www.youtube.com/embed/W9IHUEWlEa4?autoplay=1&mute=1";
+                    }
+                    else if(ar=="A")
+                    {
+							document.getElementById("display_flame").innerHTML = 'AFFECTION';
+							document.getElementById("display_flame").style.color='#DBA901';
+              let img2=document.getElementById("vid");
+              img2.src="https://www.youtube.com/embed/Zi5sLiLlXCk?autoplay=1&mute=1";
+                    }
+                    else if(ar=="M")
+                    {
+                    
+							document.getElementById("display_flame").innerHTML = 'MARRIAGE';
+							document.getElementById("display_flame").style.color='green';
+              let img3=document.getElementById("vid");
+              img3.src="https://www.youtube.com/embed/yGUKYKSJJc8?autoplay=1&mute=1";
+                    }
+                    else if(ar=="E")
+                    {
+                    
+							document.getElementById("display_flame").innerHTML = 'ENEMY';
+							document.getElementById("display_flame").style.color='red';
+              let img4=document.getElementById("vid");
+              img4.src="https://www.youtube.com/embed/eW1JtSZi0SM?autoplay=1&mute=1";
+                    }
+                    else if(ar=="S")
+                    {
+                        
+							document.getElementById("display_flame").innerHTML = 'SISTER';
+							document.getElementById("display_flame").style.color='violet';
+              let img5=document.getElementById("vid");
+              img5.src="https://www.youtube.com/embed/cUowksRM7x0?autoplay=1&mute=1";
+                    }
+                    document.getElementById("nam"+1).style.display = 'block';
+                    document.getElementById("nam"+1).textContent= "Relationship status of " +nam + " & " +names+ " is :";
+            }
+            else
+            {
+                    document.getElementById("nam"+1).style.display = 'none';
+                    count++;
+                    if(count==4)
+                    {
+                            alert("Enter other name");
+                            document.getElementById("result").style.display = 'block';
+                    }
+            }
+    }
+    else
+    {
+            return false;
+    }
+}
+
+</script>
+ </body> </html>
