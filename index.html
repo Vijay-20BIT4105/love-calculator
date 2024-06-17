@@ -49,19 +49,22 @@
 							<span name=n1 id=nam1></span>
 							</div> </div> </div> </form>
               <div class="yt">
-              <iframe align="center" height="345" width="500" src="" id="vid"></iframe>
+              <iframe align="center" height="345" width="500" src="" id="vid" ></iframe>
               </div>
               <h5 align="right" style="color: #f5efee;">Designed by @jasprit_vj</h5>
 
 	</div>
-  <h3 style="color: aliceblue;font-family: fantasy;" >  NNote:</h3>
+  <h3 style="color: aliceblue;font-family: fantasy;margin-right=10px;" >  Note:</h3>
 <h4 style="color: aliceblue;font-family: fantasy;"><ul>1.The Gender must not be Same!!.</ul></h4>
 <h4 style="color: aliceblue;font-family: fantasy;"><ul>2.Must not include sibilings.</ul></h4>
 <h4 style="color: aliceblue;font-family: fantasy;"><ul>3.Age Should be relevant.</ul></h4>
 </div>
 
 <script>
-	
+	var doc = document.getElementById('editor').contentWindow.document;
+  doc.open();
+  doc.write(<?php echo "Please enter the names"; ?>);
+  doc.close();
 function check(name)
 {
 	var new_name = name.value;
