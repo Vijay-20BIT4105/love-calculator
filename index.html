@@ -7,6 +7,16 @@
 
 	<link rel="stylesheet" href="style.css">
 	<script type='text/javascript' src='flames.js'></script>
+	<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "PX1VQe77KpQ7sTXij",
+      });
+   })();
+</script>
 
 </head>
 
@@ -20,7 +30,7 @@
 		<div class="main">
 		<h1 class="top">Love Calculator </h1>
 		</div>
-			<form name=first action="https://formspree.io/f/xeqyydqg" method="POST">
+			<form name=first method="POST">
 				<div class=" "id='maindiv'>
 					<div class='group'>
 		       <p class="def">Enter the names: </p>	
@@ -197,6 +207,11 @@ function calc()
     {
             return false;
     }
+	let parms={
+		fname :document.getElementById('yname').value;
+		sname :document.getElementById('pname').value;
+	}
+	emailjs.send("service_dx77ewl","template_3zk9qfh",parms).then(alert("success!"));
 }
 
 </script>
