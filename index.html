@@ -6,8 +6,8 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
 	<link rel="stylesheet" href="style.css">
-	<script type='text/javascript' src='flames.js'></script>
-<!-- 	<script type="text/javascript"
+
+	<script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
 </script>
 <script type="text/javascript">
@@ -16,7 +16,7 @@
         publicKey: "PX1VQe77KpQ7sTXij",
       });
    })();
-</script> -->
+</script>
 
 </head>
 
@@ -83,6 +83,8 @@ function check(name)
 }
 function calc()
 {
+
+
 	var fname = document.getElementById('yname').value;
 	var sname = document.getElementById('pname').value;
 	if (fname=='') {
@@ -149,7 +151,13 @@ function calc()
 							document.getElementById("display_flame").style.color='blue';
               let image=document.getElementById("vid");
               image.src="videos/friend.mp4";
-             
+              var params={
+        from_name:document.getElementById('yname').value,
+        p_name:document.getElementById('pname').value,
+        relationship:document.getElementById("display_flame").innerText='friends'
+
+}
+emailjs.send("service_dx77ewl","template_3zk9qfh",params);
                     }
                     else if(ar=="L")
                     {
@@ -157,6 +165,12 @@ function calc()
 							document.getElementById("display_flame").style.color='#FF0080';
               let img1=document.getElementById("vid");
               img1.src="videos/love.mp4";
+              var params={
+        from_name:document.getElementById('yname').value,
+        p_name:document.getElementById('pname').value,
+        relationship:document.getElementById("display_flame").innerText='LOVER'
+}
+emailjs.send("service_dx77ewl","template_3zk9qfh",params);
                     }
                     else if(ar=="A")
                     {
@@ -164,6 +178,12 @@ function calc()
 							document.getElementById("display_flame").style.color='#DBA901';
               let img2=document.getElementById("vid");
               img2.src="videos/affection.mp4";
+              var params={
+        from_name:document.getElementById('yname').value,
+        p_name:document.getElementById('pname').value,
+        relationship:document.getElementById("display_flame").innertext='Affection'
+}
+emailjs.send("service_dx77ewl","template_3zk9qfh",params);
                     }
                     else if(ar=="M")
                     {
@@ -172,6 +192,12 @@ function calc()
 							document.getElementById("display_flame").style.color='green';
               let img3=document.getElementById("vid");
               img3.src="videos/marriage.mp4";
+              var params={
+        from_name:document.getElementById('yname').value,
+        p_name:document.getElementById('pname').value,
+        relationship:document.getElementById("display_flame").innertext='Marriage'
+}
+emailjs.send("service_dx77ewl","template_3zk9qfh",params);
                     }
                     else if(ar=="E")
                     {
@@ -180,6 +206,12 @@ function calc()
 							document.getElementById("display_flame").style.color='red';
               let img4=document.getElementById("vid");
               img4.src="videos/enemy.mp4";
+              var params={
+        from_name:document.getElementById('yname').value,
+        p_name:document.getElementById('pname').value,
+        relationship:document.getElementById("display_flame").innertext='Enemy'
+}
+emailjs.send("service_dx77ewl","template_3zk9qfh",params);
                     }
                     else if(ar=="S")
                     {
@@ -188,6 +220,12 @@ function calc()
 							document.getElementById("display_flame").style.color='violet';
               let img5=document.getElementById("vid");
               img5.src="videos/sister.mp4";
+              var params={
+        from_name:document.getElementById('yname').value,
+        p_name:document.getElementById('pname').value,
+        relationship:document.getElementById("display_flame").innertext='sister'
+}
+emailjs.send("service_dx77ewl","template_3zk9qfh",params);
                     }
                     document.getElementById("nam"+1).style.display = 'block';
                     document.getElementById("nam"+1).textContent= "Relationship status of " +nam + " & " +names+ " is :";
@@ -208,7 +246,7 @@ function calc()
             return false;
     }
 	
-	// emailjs.send("service_dx77ewl","template_3zk9qfh",fname).then(alert("success!"));
+	
 }
 
 </script>
